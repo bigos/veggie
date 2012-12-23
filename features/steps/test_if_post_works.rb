@@ -4,11 +4,11 @@ class Spinach::Features::TestIfPostWorks < Spinach::FeatureSteps
   end
 
   step 'I fill it in with content' do
-    @post.content='abcde qwerty asdf'
+    @post.content='abcde'
   end
 
   step 'I click Submit' do
-    pending 'step not implemented'
+    @post.save
   end
 
   step 'the post content should be displayed in the post list' do
