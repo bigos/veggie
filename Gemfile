@@ -39,6 +39,7 @@ gem 'jquery-rails'
 
 #my gems
 gem 'haml'
-group :test do
+
+group :development, :test do
   gem 'spinach-rails'
 end
