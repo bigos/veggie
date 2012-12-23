@@ -1,3 +1,6 @@
+Capybara documentation:
+http://rubydoc.info/github/jnicklas/capybara/master/Capybara
+
 Spinach documentation:
 http://rubydoc.info/github/codegram/spinach/master/Spinach
 
