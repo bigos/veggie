@@ -34,5 +34,6 @@ class Spinach::Features::TestSubmittingNewPost < Spinach::FeatureSteps
 
   step 'I should see flash informing of an error' do
     page.should have_selector "#error_explanation"
+    page.body.should include("Content can&#x27;t be blank")
   end
 end
