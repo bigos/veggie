@@ -8,7 +8,8 @@ class Spinach::Features::TestFeature < Spinach::FeatureSteps
     p page.methods.sort
     #display html content of tested page
     p page.body
-
-    p page.has_text?('pogggggsts')
+    5.should eq(5) #rspeck expectations
+    5.should_not eq(4)
+    page.body.must_include('posts')
   end
 end
