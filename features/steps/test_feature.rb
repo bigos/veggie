@@ -10,6 +10,6 @@ class Spinach::Features::TestFeature < Spinach::FeatureSteps
     p page.body
     5.should eq(5) #rspeck expectations
     5.should_not eq(4)
-    page.body.must_include('posts')
+    page.body.should_not eq('posts')
   end
 end

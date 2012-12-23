@@ -42,5 +42,5 @@ gem 'haml'
 
 group :development, :test do
   gem 'spinach-rails'
-  gem 'rspec-rails'
+  gem 'rspec'
 end
