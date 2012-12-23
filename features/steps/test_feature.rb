@@ -1,12 +1,14 @@
 require 'spinach/capybara'
 class Spinach::Features::TestFeature < Spinach::FeatureSteps
-  step 'I visit the posts page' do    
-    visit '/posts'    
+  Given 'I visit the posts page' do    
+    visit '/posts'
     p current_path
   end
-  step 'I should see "Posts"' do
+  Then 'I should see "Posts"' do
+    p page.methods.sort
     #display html content of tested page
-    p page.html
-    page.has_content? 'posts'
+    p page.body
+
+    p page.has_text?('pogggggsts')
   end
 end

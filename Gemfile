@@ -43,3 +43,4 @@ gem 'haml'
 group :development, :test do
   gem 'spinach-rails'
 end
+gem 'rspec', :group => test
