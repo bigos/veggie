@@ -1,3 +1,6 @@
+Spinach documentation:
+http://rubydoc.info/github/codegram/spinach/master/Spinach
+
 experiments inspired by:
 https://github.com/codegram/spinach-rails-demo/blob/master/features/test_feature.feature
 
