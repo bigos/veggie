@@ -5,7 +5,7 @@ Feature: Commenting to a post
     Given I visit the posts page
     And select a post
     Then I should view the post
-    given I click comment link
+    Given I click comment link
     Then I should go to new_comment_path	
     And fill the text area with Test Comment.
     When I click link Create Comment
