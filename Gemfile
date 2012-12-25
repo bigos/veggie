@@ -43,6 +43,7 @@ gem 'hpricot'     #needed to convert erb to haml
 gem 'ruby_parser' #needed to convert erb to haml
 
 group :development, :test do
+  gem 'thin'
   gem 'spinach-rails'
   gem "rspec-rails"
 end
