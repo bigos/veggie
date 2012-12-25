@@ -38,7 +38,9 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 #my gems
-gem 'haml'
+gem 'haml-rails'
+gem 'hpricot'     #needed to convert erb to haml
+gem 'ruby_parser' #needed to convert erb to haml
 
 group :development, :test do
   gem 'spinach-rails'
