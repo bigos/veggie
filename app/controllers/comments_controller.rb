@@ -25,8 +25,10 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
   def new
     @comment = Comment.new
-    @comment.post_id = Post.find( params[:post_id])
+    @post = Post.find( params[:post_id])
+    @comment.post_id = @post.id
     logger.info params.inspect
+    logger.info "post: #{@post.inspect}\ncomment: #{@comment.inspect}"
    
 
     respond_to do |format|
