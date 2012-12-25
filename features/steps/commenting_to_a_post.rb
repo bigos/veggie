@@ -4,12 +4,11 @@ class Spinach::Features::CommentingToAPost < Spinach::FeatureSteps
   end
 
   step 'select a post' do
-    p page.body
-    page.click_link('/posts/2')
+    visit post_path(Post.first)
   end
 
   step 'I should view the post' do
-    pending 'step not implemented'
+    p page.body
   end
 
   step 'I click comment link' do
