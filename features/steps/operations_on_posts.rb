@@ -51,15 +51,20 @@ class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   end
 
   step 'I have selected the last post' do
-    pending 'step not implemented'
+    @last_post_id=Post.last.id
+    #don't need it really
   end
 
   step 'I click Delete button' do
-    pending 'step not implemented'
+    visit posts_path
+    @count_before_delete = Post.all.count
+    page.first(:xpath, "//td[5]/a[@href=\"/posts/#{Post.last.id}\"]").click
+    #simulated click deletes the object
+    # why it doesn't need javascript to confirm?
   end
 
   step 'the post should be deleted' do
-    pending 'step not implemented'
+    @count_before_delete.should eql(Post.all.count + 1)
   end
 
   step 'I enter invalid data' do
