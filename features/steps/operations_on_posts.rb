@@ -1,6 +1,6 @@
 class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   step 'I am on home page' do
-    pending 'step not implemented'
+    visit '/'
   end
 
   step 'I enter the post content' do
