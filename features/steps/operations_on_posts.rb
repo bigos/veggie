@@ -29,10 +29,15 @@ class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   end
 
   step 'I click on Post I want to edit' do
-    pending 'step not implemented'
+    post = Post.last
+    #puts page.body
+    pp = page.all(:xpath, "//a[@href=\"/posts/#{post.id}/edit\"]",:text=>'Edit')
+    p pp
+    page.click_link "/posts/#{post.id}/edit"
   end
 
   step 'I enter new content' do
+    p page.body
     pending 'step not implemented'
   end
 
