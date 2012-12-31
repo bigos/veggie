@@ -5,6 +5,7 @@ Feature: Operations on Posts
 
   Scenario: Creating a Post
     Given I am on home page
+    And I click on New Post
     And I enter the post content
     When I click Submit button
     Then the post should be created
@@ -21,3 +22,7 @@ Feature: Operations on Posts
     Given I have selected the last post
     When I click Delete button
     Then the post should be deleted  
+
+  Scenario: Creating a Post with invalid data
+    When I enter invalid data
+    Then validation errors shouls be raised

@@ -1,10 +1,15 @@
 class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   step 'I am on home page' do
-    visit '/'
+    visit posts_path
+  end
+
+  step 'I click on New Post' do
+    click_link 'New Post'
   end
 
   step 'I enter the post content' do
-    pending 'step not implemented'
+    p page.body
+    page.fill_in "post_body", :with => 'this is content'
   end
 
   step 'I click Submit button' do
@@ -42,4 +47,17 @@ class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   step 'the post should be deleted' do
     pending 'step not implemented'
   end
+
+  step 'I enter invalid data' do
+    @error1=Post.new :title=>'', :body =>''
+    @error2=Post.new :title=>'', :body =>'something'
+    @error3=Post.new :title=>'some title', :body =>''
+  end
+
+  step 'validation errors shouls be raised' do
+    @error1.valid?.should be_false
+    @error2.valid?.should be_false
+    @error3.valid?.should be_false
+  end
+
 end
