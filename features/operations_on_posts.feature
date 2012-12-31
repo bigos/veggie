@@ -15,7 +15,7 @@ Feature: Operations on Posts
     Given I am on home page
     And I click on Post I want to edit
     And I enter new content
-    When I click Submit button
+    When I click Save button
     Then the post content should change
 
   Scenario: Deleting a Post
