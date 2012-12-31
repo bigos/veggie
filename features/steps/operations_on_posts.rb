@@ -8,20 +8,24 @@ class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   end
 
   step 'I enter the post content' do
-    p page.body
+    page.fill_in "post_title", :with => 'some title'
     page.fill_in "post_body", :with => 'this is content'
   end
 
-  step 'I click Submit button' do
-    pending 'step not implemented'
+  step 'I click Save button' do
+    page.click_button 'Save'
+    page.body.should_not include('error_explanation')
   end
 
   step 'the post should be created' do
-    pending 'step not implemented'
+    p=Post.last
+    p.body.should include('this is content')
+    p.body.should include('this is content')
   end
 
   step 'I should see it in the posts list' do
-    pending 'step not implemented'
+    visit posts_path
+    page.body.should include('this is content') 
   end
 
   step 'I click on Post I want to edit' do

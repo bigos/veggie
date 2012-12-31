@@ -7,7 +7,7 @@ Feature: Operations on Posts
     Given I am on home page
     And I click on New Post
     And I enter the post content
-    When I click Submit button
+    When I click Save button
     Then the post should be created
     And I should see it in the posts list
 
