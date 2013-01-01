@@ -19,7 +19,6 @@ Feature: Operations on Posts
     Then the post content should change
 
   Scenario: Deleting a Post
-    Given I have selected the last post
     When I click Delete button
     Then the post should be deleted  
 

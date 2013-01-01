@@ -29,30 +29,20 @@ class Spinach::Features::OperationsOnPosts < Spinach::FeatureSteps
   end
 
   step 'I click on Post I want to edit' do
-    @post_content = Post.last.body
     #finds myny elements that match
-    #page.all(:xpath, "//a[@href=\"/posts/#{post.id}/edit\"]",:text=>'
+    #page.all(:xpath, "//a[@href=\"/posts/someid/edit\"]"
     #finds DOM element that matches
     page.find(:xpath, "//a[@href=\"/posts/#{Post.last.id}/edit\"]").click
     # this is a locator "//a[@href=\"/posts/40/edit\"]"
   end
 
   step 'I enter new content' do
-    #p page.body
-    post = Post.last
-    page.fill_in 'post_title', :with => post.title+ ' has been edited'
-    page.fill_in 'post_body', :with => post.body+ ' has been altered'
+    page.fill_in 'post_title', :with => Post.last.title+ ' has been edited'
+    page.fill_in 'post_body', :with => Post.last.body+ ' has been altered'
   end
 
   step 'the post content should change' do
-    #p @post_content
-    #p Post.last
     Post.last.body.should_not equal(@post_content)
-  end
-
-  step 'I have selected the last post' do
-    @last_post_id=Post.last.id
-    #don't need it really
   end
 
   step 'I click Delete button' do
